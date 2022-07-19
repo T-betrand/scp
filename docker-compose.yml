@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  #database
+  postgres:
+    image: postgres 
+    volumes: 
+      - ./data/db:/var/lib/postgresql/data 
+    environment:
+      - POSTGRES_DB=postgres 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres 
+    container_name: pg_django_db
+
+  #django application
+  backend:
+    build: ./homeservice-backend 
+    volumes: 
+      - .:/homeserviceAPI
+    # environment:
+    #   - name=value
+    ports:
+      - 8000:8000
+    image: homeservice-be:v1.0
+    container_name: homeservice-be-container
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+    - postgres
+
+  #vue application
+  frontend:
+    build: 
+      context: ./homeservice-frontend 
+    volumes: 
+      - ./:homeserviceMPA 
+    ports:
+      - 3000:3000
+    image: homeservice-fe:v1.0
+    container_name: homeservice-fe-container
+    command: npm start 
+
+
+volumes:
+  postgres:
+  
