@@ -44,4 +44,6 @@ jobs:
           pytest
       #testing for vue application
       - name: Testing Vue Application
-        run: npm test
+        run: |
+          cd homeservice-frontend/ 
+          npm test
