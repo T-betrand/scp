@@ -54,5 +54,6 @@ jobs:
     needs: [test]
     steps:
       - name: Dockerizing Applications
+        run: echo next
       - name: Login to DockerHub 
         uses: docker/login-action@v1
