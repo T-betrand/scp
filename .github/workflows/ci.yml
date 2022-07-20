@@ -46,4 +46,4 @@ jobs:
       - name: Testing Vue Application
         run: |
           cd homeservice-frontend/ 
-          npm test
+          
