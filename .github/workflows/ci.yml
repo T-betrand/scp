@@ -1,6 +1,6 @@
 name: Building testing, containerization and deployment 
 
-on: [pull, pull_request]
+on: [push, pull_request]
 
 jobs:
   build:
