@@ -1,10 +1,9 @@
-# name: Automate Build, Testing, Containerization and Deployment 
+name: Automate Build, Testing, Containerization and Deployment 
 
-# on: [push, pull_request]
+on: [push, pull_request]
 
-# jobs:
-#   ##building the project
-#   build:    
+jobs:
+  build:    
 #     # environment:
 #     #   name: builds
 #     # # env: 
