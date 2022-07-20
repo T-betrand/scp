@@ -8,8 +8,7 @@ on:
 
 jobs:
   ##building the project
-  build:
-    # runs-on: ubuntu-latest
+  build:    
     environment:
       name: builds
     # env: 
