@@ -71,9 +71,9 @@ jobs:
           context: ./
           file: ./homeservice-frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceAPI
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceAPI:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceAPI:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceapi
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceapi:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceapi:buildcache,mode=max
       - name: Django Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
       #building vue docker image
@@ -83,8 +83,8 @@ jobs:
           context: ./
           file: ./homeservice-frontend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceMPA
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceMPA:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeserviceMPA:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/homeservicempa
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeservicempa:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeservicempa:buildcache,mode=max
       - name: Vue Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
