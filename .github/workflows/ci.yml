@@ -50,6 +50,8 @@ jobs:
 
 
   containerization:
+    environment:
+      name: containerization
     runs-on: ubuntu-latest
     needs: [tests]
     steps:
