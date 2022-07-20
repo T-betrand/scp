@@ -32,7 +32,7 @@ services:
     build: 
       context: ./homeservice-frontend 
     volumes: 
-      - ./:homeserviceMPA 
+      - .:/homeserviceMPA 
     ports:
       - 3000:3000
     image: homeservice-fe:v1.0
