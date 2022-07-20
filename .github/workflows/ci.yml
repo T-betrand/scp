@@ -10,3 +10,13 @@ jobs:
         uses: actions/checkout@v2
       - name: checkout files  # for backend (django-app)
         uses: Bhacaz/checkout-files@v2
+        with:
+          files: homeservice-backend/requirements.txt #list of files and can also be a folder
+      - name: install python version 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+      - name: update pip
+        run: python -m pip install --upgrade pip
+      - name: install dependencies
+        run: pip install -r requirements.txt
