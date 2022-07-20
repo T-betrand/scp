@@ -46,4 +46,13 @@ jobs:
       - name: Testing Vue Application
         run: |
           cd homeservice-frontend/ 
-          
+        # npm test
+
+
+  containerization:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Dockerizing Applications
+      - name: Login to DockerHub 
+        uses: docker/login-action@v1
