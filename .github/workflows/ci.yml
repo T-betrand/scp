@@ -1,0 +1,10 @@
+name: Building testing, containerization and deployment 
+
+on: [pull, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pulling git repo 
+        uses: actions/checkout@v2 
