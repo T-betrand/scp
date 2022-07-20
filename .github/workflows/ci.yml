@@ -20,12 +20,16 @@ jobs:
           update-pip: "false"
           update-setuptools: "false"
           update-wheel: "false"
+
       - name: install node version 16
         uses: actions/setup-node@v2
         with:
           node-version: "16.x"
+          cache: 'npm'
       - name: install dependencies
-        run: npm install
+        run: |
+         cd homeservice-frontend/  
+         npm install
 
   tests:
     runs-on: ubuntu-latest
