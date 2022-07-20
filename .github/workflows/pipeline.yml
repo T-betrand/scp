@@ -1,10 +1,6 @@
 name: Automate Build, Testing, Containerization and Deployment 
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   ##building the project
@@ -133,7 +129,6 @@ jobs:
     #   contents: 'read'
     #   id-token: 'write'
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2 
       - name: deploy project to Heroku multiple images using docker-compose 
