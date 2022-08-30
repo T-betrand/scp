@@ -80,7 +80,7 @@ jobs:
       - name: Build and Push Vue Image
         uses: docker/build-push-action@v2
         with:
-          context: ./homeservice-frontend
+          context: "homeservice-frontend"
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/homeservicempa
