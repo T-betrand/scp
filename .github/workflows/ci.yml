@@ -99,7 +99,7 @@ jobs:
     needs: [containerization]
     steps:
     - name: Preparing deployment environment
-
+      run: python3
     - name: Checkout
       uses: actions/checkout@v2
     - name: deploy project to Heroku multiple images using docker-compose
