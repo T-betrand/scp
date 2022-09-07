@@ -37,7 +37,7 @@ services:
       - 3000:3000
     image: homeservice-fe:v1.0
     container_name: homeservice-fe-container
-    command: npm start 
+    # command: npm start 
 
 
 volumes:
