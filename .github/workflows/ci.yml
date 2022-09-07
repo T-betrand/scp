@@ -99,7 +99,6 @@ jobs:
     needs: [containerization]
     steps:
     - name: Preparing deployment environment
-      run: 
 
     - name: Checkout
       uses: actions/checkout@v2
