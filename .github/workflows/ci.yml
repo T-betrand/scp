@@ -100,3 +100,14 @@ jobs:
     steps:
     - name: Preparing deployment environment
       run: 
+
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: deploy project to Heroku multiple images using docker-compose
+      id: heroku
+      uses: snithyanantham/docker-compose-multiple-apps-heroku-deploy@v1.0
+      with:
+        email: ${{ secrets.HEROKU_EMAIL }}
+        api_key: ${{ secrets.HEROKU_API_KEY }}
+        docker_compose_file: './docker-compose.yml'
+        heroku_apps: '[{"imagename":"homeservice-be:v1.0", "appname":"", "apptype":"web"},{"imagename":"homeservice-fe:v1.0", "appname":"", "apptype":"web"}]'
