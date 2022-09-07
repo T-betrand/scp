@@ -91,3 +91,12 @@ jobs:
       #     cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/homeservicempa:buildcache,mode=max
       # - name: Vue Image digest
       #   run: echo ${{ steps.docker_build.outputs.digest }}
+
+  deployment:
+    environment:
+      name: deployment 
+    runs-on: ubuntu-latest
+    needs: [containerization]
+    steps:
+    - name: Preparing deployment environment
+      run: 
